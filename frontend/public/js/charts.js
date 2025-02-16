@@ -28,30 +28,37 @@ document.addEventListener('DOMContentLoaded', function () {
         console.warn('[WARN] Contract address is empty!');
         return;
       }
-
+  
       console.log('[INFO] New contract address entered:', contractAddress);
-
+      
+      // Show the loading indicator
+      showChartLoadingIndicator(true);
+  
       try {
         // 1) Clear existing data on your backend
         await clearAPIData();
-
+  
         // 2) Send the contract address to your Telegram bridge
         await sendContractAddressToBot(contractAddress);
-
+  
         // 3) Once the address is sent, start fetching data
         //    (Also clear any previous intervals so we don't double-poll)
         if (fetchInterval) clearInterval(fetchInterval);
-
+  
         // Immediately render chart once
-        renderSniperChart();
-
+        await renderSniperChart();
+  
         // Then poll every 10 seconds
         fetchInterval = setInterval(renderSniperChart, 10_000);
       } catch (error) {
         console.error('[ERROR] Error in address input flow:', error);
+      } finally {
+        // Hide the loading indicator once everything is done
+        showChartLoadingIndicator(false);
       }
     }
   });
+  
 
   // ---------------------------------------------------------
   // 2) Functions to interact with your backend APIs
@@ -59,7 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
   async function clearAPIData() {
     try {
       const response = await fetch(
-        'http://ec2-3-80-88-97.compute-1.amazonaws.com:3000/clearData',
+        // 'http://ec2-3-80-88-97.compute-1.amazonaws.com:3000/clearData',
+        'http://localhost:3000/clearData',
         {
           method: 'POST',
         }
@@ -79,7 +87,9 @@ document.addEventListener('DOMContentLoaded', function () {
   async function sendContractAddressToBot(contractAddress) {
     try {
       const apiEndpoint =
-        'http://ec2-3-80-88-97.compute-1.amazonaws.com:3001/sendContractAddress';
+        // 'http://ec2-3-80-88-97.compute-1.amazonaws.com:3001/sendContractAddress';
+        'http://localhost:3001/sendContractAddress';
+
 
       console.log('[INFO] Sending contract address to bot:', contractAddress);
 
@@ -107,7 +117,8 @@ document.addEventListener('DOMContentLoaded', function () {
   async function fetchSniperData() {
     try {
       const response = await fetch(
-        'http://ec2-3-80-88-97.compute-1.amazonaws.com:3000/fetchData'
+        // 'http://ec2-3-80-88-97.compute-1.amazonaws.com:3000/fetchData'
+        'http://localhost:3000/fetchData'
       );
       if (!response.ok) {
         throw new Error(`[Sniper] HTTP error! Status: ${response.status}`);
