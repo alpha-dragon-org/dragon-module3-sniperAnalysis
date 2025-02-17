@@ -7,15 +7,10 @@
 
     <!-- Chart.js Library -->
     <script src="lib/chart.js"></script>
-    <!-- FontAwesome (optional if you use icons) -->
     <link rel="icon" type="image/png" sizes="128x128" href="images/icon-128.png" />
     <link rel="stylesheet" href="lib/fontawesome/css/all.min.css" />
 
-    <!-- Combined CSS (from your reference + loading overlay) -->
     <style>
-      /* ------------------------------
-         GLOBAL & BASIC STYLES
-      --------------------------------*/
       * {
         box-sizing: border-box;
       }
@@ -31,9 +26,6 @@
         text-decoration: none;
       }
 
-      /* ------------------------------
-         HEADER SECTION
-      --------------------------------*/
       .main-header {
         position: relative;
         padding: 7.5% 15% 2rem;
@@ -60,7 +52,7 @@
       }
       .bounty-text {
         font-size: 0.9rem;
-        color: #ffdb66;
+        color: #ffffff;
       }
       .instructions {
         max-width: 650px;
@@ -69,9 +61,6 @@
         color: #ffffff;
       }
 
-      /* ------------------------------
-         MAIN LAYOUT
-      --------------------------------*/
       .layout {
         display: flex;
         flex-wrap: wrap;
@@ -80,14 +69,10 @@
         margin: 2% 15.5%;
       }
 
-      /* ------------------------------
-         LEFT COLUMN: Data Field Section
-      --------------------------------*/
       .data-field-section {
         flex: 1 1 300px;
         background-color: #1e1e1e;
         border-radius: 8px;
-        padding: 1rem;
         min-width: 280px;
       }
       .data-field-section h2 {
@@ -111,9 +96,6 @@
         color: #ffffff;
       }
 
-      /* ------------------------------
-         RIGHT COLUMN: Output Section
-      --------------------------------*/
       .output-section {
         flex: 1 1 500px;
         background-color: #1e1e1e;
@@ -125,9 +107,6 @@
         color: rgb(255, 255, 255);
       }
 
-      /* ------------------------------
-         UPDATED CONTAINER DESIGN
-      --------------------------------*/
       :root {
         --primary-color: #2070cb;
         --background-dark: #1b2240;
@@ -147,11 +126,6 @@
         margin-top: 1rem;
       }
 
-      /* ------------------------------
-         SEARCH HEADER
-      --------------------------------*/
-
-      
       .search-header {
         display: flex;
         align-items: center;
@@ -165,7 +139,6 @@
         position: relative;
         z-index: 10;
       }
-      
       .search-header input.address-input {
         flex: 1;
         width: 100%;
@@ -183,10 +156,6 @@
         z-index: 20;
       }
 
-
-      /* ------------------------------
-         CHART WRAPPER + LOADING
-      --------------------------------*/
       .chart-wrapper {
         width: 100%;
         height: 200px;
@@ -209,7 +178,6 @@
         border-radius: 8px;
       }
 
-      /* Utility class for text color changes */
       .danger {
         color: var(--danger-color);
       }
@@ -239,11 +207,13 @@
           <tbody>
             <tr>
               <td><strong>Active Snipers:</strong></td>
-              <td><span id="activeSnipersCount">Loading..</span></td>
+              <!-- Initially "Loading.." so we don't show 0 right away -->
+              <td><span id="activeSnipersCount">N/A</span></td>
             </tr>
             <tr>
               <td><strong>Total Holding:</strong></td>
-              <td><span id="totalHoldingValue">Loading..</span></td>
+              <!-- Initially "Loading.." so we don't show 0 right away -->
+              <td><span id="totalHoldingValue">N/A</span></td>
             </tr>
           </tbody>
         </table>
@@ -253,7 +223,6 @@
       <div class="output-section">
         <h2>Enter Contract Address</h2>
         <div class="container">
-          <!-- Contract Address Input -->
           <div class="search-header">
             <input
               type="text"
@@ -264,11 +233,9 @@
         </div>
 
         <br /><br />
-        <h2>Sniper Chart Output</h2>
+        <h2>Module Output</h2>
         <div class="container chart-wrapper">
-          <!-- Loading Text -->
           <div id="chartLoading" class="loading-text">Loading Chart Data...</div>
-          <!-- The Sniper Analysis Chart -->
           <canvas id="timelineChart"></canvas>
         </div>
 
@@ -278,11 +245,13 @@
             <tbody>
               <tr>
                 <td><strong>Active Snipers:</strong></td>
-                <td><span id="activeSnipersOutput">Loading..</span></td>
+                <!-- Initially "Loading.." so we don't show 0 right away -->
+                <td><span id="activeSnipersOutput">N/A</span></td>
               </tr>
               <tr>
                 <td><strong>Total Holding:</strong></td>
-                <td><span id="totalHoldingOutput">Loading..</span></td>
+                <!-- Initially "Loading.." so we don't show 0 right away -->
+                <td><span id="totalHoldingOutput">N/A</span></td>
               </tr>
             </tbody>
           </table>
