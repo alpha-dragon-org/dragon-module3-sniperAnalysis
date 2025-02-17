@@ -89,8 +89,8 @@ dragon-data-modules/
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/alpha-dragon-dev/dragon-data-modules.git
-   cd dragon-data-modules
+   git clone https://github.com/alpha-dragon-org/dragon-module3-sniperAnalysis.git
+   cd dragon-module3-sniperAnalysis
    ```
 
 2. **Install Dependencies:**
