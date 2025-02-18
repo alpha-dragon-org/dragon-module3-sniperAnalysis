@@ -145,7 +145,7 @@ dragon-data-modules/
 
 - **Module Name:** Sniper Analysis  
 - **Bounty:** 0.05% of $DRAGON supply  
-- **Goal:** Retrieve all data below in real-time and with extremely high accuracy.
+- **Goals:** Retrieve all data below in real-time and with extremely high accuracy.
 
 
 ### Data To Fetch
