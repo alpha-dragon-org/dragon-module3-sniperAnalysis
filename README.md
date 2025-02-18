@@ -6,7 +6,7 @@ Dragon is a browser extension that visualizes the power concentrations of any to
 - The overview of all wallets that purchased token supply either
   - A) within 15s of the creation of its first liquidity pool, or
   - B) within 5s of its graduation from Pump.fun to Raydium
-- The specific data analyzed includes total active snipers, percentage of sniped supply still active, relative timestamp per snipe, etc.
+- The specific data to be analyzed includes total active snipers, percentage of sniped supply still active, relative timestamp per snipe, and more.
 - The definition of a snipe will evolve from here naturally. If a developer wishes to alter it at this stage, we are open to the discussion.
   
 Soon, developers will contribute their own modules to Dragon based on what they think is important for traders to know when in the trenches. 
