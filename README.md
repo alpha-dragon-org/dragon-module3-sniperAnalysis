@@ -3,9 +3,13 @@
 Dragon is a browser extension that visualizes the power concentrations of any token on the Solana blockchain. The extension is separated into "data-modules" that produce different analyses on a token's holders. This initial release includes four data-modules, and the module of focus for this bounty is:
 
 **3. Sniper Analysis** 
-- An analysis of any sniped supply still holding (total active snipers, percentage of sniped supply still active, relative timestamp per snipe, etc.).
+- The overview of all wallets that purchased token supply either
+  - A) within 15s of the creation of its first liquidity pool, or
+  - B) within 5s of its graduation from Pump.fun to Raydium
+- The specific data analyzed includes total active snipers, percentage of sniped supply still active, relative timestamp per snipe, etc.
+- The definition of a snipe will evolve from here naturally. If a developer wishes to alter it at this stage, we are open to the discussion.
   
-Soon, developers will contribute their own modules to Dragon based on what they think is important for traders to know when in the trenches.
+Soon, developers will contribute their own modules to Dragon based on what they think is important for traders to know when in the trenches. 
 
 ---
 
@@ -140,16 +144,18 @@ dragon-data-modules/
 ## Bounty Details
 
 - **Module Name:** Sniper Analysis  
-- **Bounty:** 0.10% of $DRAGON supply  
+- **Bounty:** 0.05% of $DRAGON supply  
 - **Goal:** Retrieve all data below in real-time and with extremely high accuracy.
 
 
 ### Data To Fetch
 
 - **Total # of snipers active**  
+  The total number of wallets that bought supply within the [defined boundaries](#intro-to-dragon-data-modules) and are still actively holding any amount.  
   **Example Output:** `2`
 
-- **Total % Active in Snipes**  
+- **Total % active in snipes**  
+  The total amount of token supply actively held among all sniper wallets.  
  **Example Output:** `0.053`
 
 
