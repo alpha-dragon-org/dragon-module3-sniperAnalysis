@@ -156,7 +156,7 @@ dragon-data-modules/
 
 - **Total % active in snipes**  
   The total amount of token supply actively held among all sniper wallets.  
- **Example Output:** `0.053`
+ **Example Output:** `18.3`
 
 - **Metadata for each snipe**
 
