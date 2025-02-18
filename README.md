@@ -3,7 +3,7 @@
 Dragon is a browser extension that visualizes the power concentrations of any token on the Solana blockchain. The extension is separated into "data-modules" that produce different analyses on a token's holders. This initial release includes four data-modules, and the module of focus for this bounty is:
 
 **3. Sniper Analysis** 
-- The overview of all wallets that purchased token supply either
+- The overview of all wallets that purchased token supply
   - A) within 15s of the creation of its first liquidity pool, or
   - B) within 5s of its graduation from Pump.fun to Raydium
 - The specific data to be analyzed includes total active snipers, percentage of sniped supply still active, relative timestamp per snipe, and more.
@@ -150,32 +150,23 @@ dragon-data-modules/
 
 ### Data To Fetch
 
-- **Total # of snipers active**  
-  The total number of wallets that bought supply within the [defined boundaries](#intro-to-dragon-data-modules) and are still actively holding any amount.  
+- **Total # of active snipers**  
+  The total number of wallets that bought supply within either of the two [defined boundaries](#intro-to-dragon-data-modules) and are still actively holding any amount.  
   **Example Output:** `2`
 
 - **Total % active in snipes**  
   The total amount of token supply actively held among all sniper wallets.  
  **Example Output:** `0.053`
 
+- **Metadata for each snipe**
 
----
+  - **Timestamp of snipe**  
+  The exact number of seconds that the buy was made, relative to either one of the two [defined boundaries](#intro-to-dragon-data-modules). There may be multiple values to fetch, depending on the total # of active snipers.  
+  **Example Output:** `4s`
 
-### Module Output
-
-- **Sniper Analysis Details(metadata):**  
-
-- **% Active in Snipe 1:**  
-  *Example:* `0.023`
-
-- **Timestamp of Snipe 1:**  
-  *Example:* `2s`
-
-- **% Active in Snipe 2:**  
-  *Example:* `0.03`
-
-- **Timestamp of Snipe 2:**  
-  *Example:* `1s`
+  - **% active in snipe**  
+  The amount of token supply still active within the snipe. There may be multiple values to fetch, depending on the total # of active snipers.  
+  **Example Output:** `7.2`
 
 ---
 
