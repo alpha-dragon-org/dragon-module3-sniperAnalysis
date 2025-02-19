@@ -3,7 +3,7 @@
 Dragon is a browser extension that visualizes the power concentrations of any token on the Solana blockchain. The extension is separated into "data-modules" that produce different analyses on a token's holders. This initial release includes four data-modules, and the module of focus for this bounty is:
 
 **3. Sniper Analysis** 
-- The overview of all wallets that purchased token supply
+- The overview of all wallets that bought token supply
   - A) within 15s of the creation of its first liquidity pool, or
   - B) within 5s of its graduation from Pump.fun to Raydium
 - The specific data to be analyzed includes total active snipers, percentage of sniped supply still active, relative timestamp per snipe, and more.
