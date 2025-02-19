@@ -76,6 +76,11 @@
         min-width: 280px;
       }
       .data-field-section h2 {
+        margin-top: 15px;
+        font-size: 1rem;
+        color: #ffffff;
+      }
+      .data-field-section h4 {
         margin-top: 0;
         font-size: 1rem;
         color: #ffffff;
@@ -89,6 +94,7 @@
         padding: 0.5rem 0;
         vertical-align: middle;
         color: #ffffff;
+        font-size: 14px;
       }
       .data-field-section td strong {
         display: inline-block;
@@ -103,8 +109,12 @@
         padding-top: 0%;
         min-width: 320px;
       }
-      .output-section h2 {
+      .output-section h4 {
         color: rgb(255, 255, 255);
+      }
+      .container table td {
+        color: white;
+        font-size: 14px;
       }
 
       :root {
@@ -190,7 +200,7 @@
       <img src="images/logo.gif" alt="Dragon" class="dragon-image" />
       <h1 class="project-title">Project: Dragon</h1>
       <h2 class="module-title">Module: Sniper Analysis</h2>
-      <p class="bounty-text">Bounty: 0.20% of $DRAGON supply</p>
+      <p class="bounty-text">Bounty: 0.10% of $DRAGON supply</p>
       <p class="instructions">
         Please paste an SPL token contract address in the field provided
         to test the functionality of your code. The data output is defined
@@ -217,11 +227,50 @@
             </tr>
           </tbody>
         </table>
+
+        <br>
+
+        <h2> First Set of Snipes
+          <br>(creation of its first liquidity pool)</h2>
+        <table>
+          <tbody>
+            <tr>
+              <td><strong>Active Snipers (upto 15 seconds):</strong></td>
+              <!-- Initially "Loading.." so we don't show 0 right away -->
+              <td><span id="activeSnipersCount">N/A</span></td>
+            </tr>
+            <tr>
+              <td><strong>Total Holding (upto 15 seconds):</strong></td>
+              <!-- Initially "Loading.." so we don't show 0 right away -->
+              <td><span id="totalHoldingValue">N/A</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br>
+
+        <h2> Second Set of Snipes<br> (during graduation from Pump.fun to Raydium)</h2>
+        <table>
+          <tbody>
+            <tr>
+              <td><strong>Active Snipers (upto 5 seconds):</strong></td>
+              <!-- Initially "Loading.." so we don't show 0 right away -->
+              <td><span id="activeSnipersCount">N/A</span></td>
+            </tr>
+            <tr>
+              <td><strong>Total Holding (upto 5 seconds):</strong></td>
+              <!-- Initially "Loading.." so we don't show 0 right away -->
+              <td><span id="totalHoldingValue">N/A</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+
       </div>
 
       <!-- RIGHT COLUMN: Module Output (Search + Chart) -->
       <div class="output-section">
-        <h2>Enter Contract Address</h2>
+        <h4>Enter Contract Address</h4>
         <div class="container">
           <div class="search-header">
             <input
@@ -233,7 +282,7 @@
         </div>
 
         <br /><br />
-        <h2>Module Output</h2>
+        <h4>Module Output (hover for metadata)</h4>
         <div class="container chart-wrapper">
           <div id="chartLoading" class="loading-text">Loading Chart Data...</div>
           <canvas id="timelineChart"></canvas>
