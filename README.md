@@ -5,7 +5,7 @@ Dragon is a browser extension that visualizes the power concentrations of any to
 The Alpha-Dragon includes four data-modules, and the module of focus for this bounty is:
 
 **3. Sniper Analysis** 
-- This module will display an overview of all wallets that bought token supply `A) within 15s of the creation of its first liquidity pool`, OR `B) within 5s of its graduation from Pump.fun to Raydium`. The specific data to be retrieved includes total active snipers, % of sniped supply still active, timestamps per snipe, and more. The definition of a snipe will evolve naturally but if a developer wishes to discuss it at this stage, we are open to the discussion and implementation.
+- This module will display an overview of all wallets that bought token supply `A) within 15s of its first liquidity pool` OR `B) within 5s of its graduation from Pump.fun to Raydium`. The specific data to be retrieved includes total active snipers, % of sniped supply still active, timestamps per snipe, and more. The definition of a snipe will evolve naturally but if a developer wishes to discuss it at this stage, we are open to the discussion and implementation.
   
 ---
 
@@ -18,9 +18,9 @@ The Alpha-Dragon includes four data-modules, and the module of focus for this bo
   - [Setup \& Installation](#setup--installation)
   - [Module Details](#module-details)
   - [Bounty Selection Criteria](#bounty-selection-criteria)
-  - [Using Helius RPC for Integration](#using-helius-rpc-for-integration)
-  - [Future Bounties](#future-bounties)
+  - [Integrating RPCs For Data Retrieval](#integrating-rpcs-for-data-retrieval)
   - [Contributing](#contributing)
+  - [Future Bounties](#future-bounties)
   - [Issues](#issues)
   - [License](#license)
 
@@ -148,11 +148,11 @@ dragon-data-modules/
 ### Data To Fetch
 
 - **Total % active in snipes**  
-  The total amount of token supply actively held among all sniper wallets.  
+  The total amount of token supply held in all sniper wallets.  
  **Example Output:** `18.3`
 
 - **Total # of active snipers**  
-  The total number of wallets that bought supply within either of the two [defined boundaries](#intro-to-dragon-data-modules) and are still actively holding any amount.  
+  The total number of wallets that bought supply within either of the two [defined boundaries](#intro-to-dragon-data-modules), and are still holding any amount.  
   **Example Output:** `2`
 
 - **Metadata for each active snipe**
@@ -162,7 +162,7 @@ dragon-data-modules/
   **Example Output:** `7.2`
 
   - **% total in snipe**  
-  The amount of token supply that was purchased with the snipe, regardless of how much is still held. There may be multiple values to fetch, depending on the total # of active snipers.  
+  The amount of token supply that was initially bought with the snipe. There may be multiple values to fetch, depending on the total # of active snipers.  
   **Example Output:** `7.2`
 
   - **Timestamp of snipe**  
@@ -176,7 +176,7 @@ dragon-data-modules/
 - **Metadata for each inactive snipe**
 
   - **% total in snipe**  
-  The amount of token supply that was originally purchased with the snipe. There may be multiple values to fetch, depending on the total # of inactive snipers.  
+  The amount of token supply that was initially bought with the snipe. There may be multiple values to fetch, depending on the total # of inactive snipers.  
   **Example Output:** `0.6`
 
    - **Timestamp of snipe**  
@@ -185,7 +185,7 @@ dragon-data-modules/
 
 ### Module Output
 
-We have included a testing environment where you can see your code displayed live in the module. The test module will be interactive, meaning you can hover to reveal the metadata retrieved per snipe. *Note:* The module output may only display data for active snipes.
+We have included a testing environment where you can see your code displayed live in the module. The test module will be interactive, meaning you can hover to reveal the metadata per snipe. *Note:* The module output may only display active snipes.
 
 ---
 
@@ -201,11 +201,11 @@ If there is more than one developer to meet the above criteria, the first pull r
 
 ---
 
-## Using Helius RPC for Integration
+## Integrating RPCs for Data Retrieval
 
-[Helius](https://www.helius.dev) is a powerful RPC service that enables quick and direct access to on-chain data on Solana. By integrating Helius RPCs into Dragon's data-modules, we can **replace slow web-scraping techniques** and **increase data accuracy.** 
+[Helius](https://www.helius.dev) is an example of an RPC service that enables quick and direct access to on-chain data on Solana. By integrating RPCs into Dragon's data-modules, we can **replace slow web-scraping techniques** and **increase data accuracy.** 
 
-**How to update the code**
+**How to update the code (with Helius)**
 - **Modify the stub functions:** In files like `src/modules/tokenInfo.js` and `src/api/server.js`, update the stub implementations to call the appropriate Helius RPC endpoints.
 - **Leverage the configured endpoints:** Use the `HELIUS_RPC_URL` from `src/config/config.js` to ensure that your RPC calls are directed to the correct endpoint with your API key.
 - **Improve performance:** Integrate batching of RPC calls if necessary to further improve response time.
@@ -245,7 +245,7 @@ If there is more than one developer to meet the above criteria, the first pull r
 
 ## Future Bounties
 
-Dragon’s aim is to make token analyses more transparent and community-driven. After the initial four modules, bounties will expand to include more data-modules on holder analyses and deception analyses on token supply.
+Dragon’s aim is to make token analyses more transparent and community-driven. At the community's direction, bounties will expand to include more types of holder analyses and deception analyses on token supply.
 
 If you have an idea for a data-module that could benefit traders in the trenches, please propose it in the discussion [here](https://github.com/alpha-dragon-org/dragon-module-openIdeas) to be considered for a bounty.
 
