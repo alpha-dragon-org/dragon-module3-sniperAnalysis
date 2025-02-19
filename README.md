@@ -20,7 +20,8 @@ Soon, developers will contribute their own modules to Dragon based on what they 
   - [Contribution Overview](#contribution-overview)
   - [Folder Structure](#folder-structure)
   - [Setup \& Installation](#setup--installation)
-  - [Bounty Details](#bounty-details)
+  - [Module Details](#module-details)
+  - [Bounty Selection Criteria](#bounty-selection-criteria)
   - [Using Helius RPC for Integration](#using-helius-rpc-for-integration)
   - [Future Bounties](#future-bounties)
   - [Contributing](#contributing)
@@ -31,7 +32,7 @@ Soon, developers will contribute their own modules to Dragon based on what they 
 
 ## Contribution Overview
 
-Each of Dragon's first four modules currently gathers data by web-scraping TrenchyBot, TrenchRadar, and Bubblemaps. The task is to build a pipeline that connects the Token Info module with a Solana RPC (ie. [Helius](https://www.helius.dev)) and replace all scrapes. If any data can not be retrieved from the RPC, the developer can use whatever means necessary given the goals stated in [Bounty Details](#bounty-details) below.
+Each of Dragon's first four modules currently gathers data by web-scraping TrenchyBot, TrenchRadar, and Bubblemaps. The task is to build a pipeline that connects the Token Info module with a Solana RPC (ie. [Helius](https://www.helius.dev)) and replace all scrapes. If any data can not be retrieved from the RPC, the developer can use whatever means necessary given the goals stated in [Module Details](#module-details) below.
 
 By fetching real-time data directly from a node, Dragon will become an unbeatable companion in the trenches.
 
@@ -150,23 +151,42 @@ dragon-data-modules/
 
 ### Data To Fetch
 
-- **Total # of active snipers**  
-  The total number of wallets that bought supply within either of the two [defined boundaries](#intro-to-dragon-data-modules) and are still actively holding any amount.  
-  **Example Output:** `2`
-
 - **Total % active in snipes**  
   The total amount of token supply actively held among all sniper wallets.  
  **Example Output:** `18.3`
 
-- **Metadata for each snipe**
+- **Total # of active snipers**  
+  The total number of wallets that bought supply within either of the two [defined boundaries](#intro-to-dragon-data-modules) and are still actively holding any amount.  
+  **Example Output:** `2`
+
+- **Metadata for each active snipe**
 
   - **Timestamp of snipe**  
   The exact number of seconds that the buy was made, relative to either one of the two [defined boundaries](#intro-to-dragon-data-modules). There may be multiple values to fetch, depending on the total # of active snipers.  
   **Example Output:** `4s`
 
-  - **% active in snipe**  
-  The amount of token supply still active within the snipe. There may be multiple values to fetch, depending on the total # of active snipers.  
+  - **% total in snipe**  
+  The amount of token supply that was purchased with the snipe, regardless of how much is still held. There may be multiple values to fetch, depending on the total # of active snipers.  
   **Example Output:** `7.2`
+
+  - **% active in snipe**  
+  The amount of token supply actively held in the snipe. There may be multiple values to fetch, depending on the total # of active snipers.  
+  **Example Output:** `7.2`
+
+- **Total # of inactive snipers**  
+  The total number of wallets that bought supply within either of the two [defined boundaries](#intro-to-dragon-data-modules) and are no longer holding any amount, ie. sold to 0%  
+  **Example Output:** `7`
+
+- **Metadata for each inactive snipe**
+
+  - **Timestamp of snipe**  
+  The exact number of seconds that the buy was made, relative to either one of the two [defined boundaries](#intro-to-dragon-data-modules). There may be multiple values to fetch, depending on the total # of inactive snipers.  
+  **Example Output:** `2s`
+
+  - **% total in snipe**  
+  The amount of token supply that was originally purchased with the snipe. There may be multiple values to fetch, depending on the total # of inactive snipers.  
+  **Example Output:** `0.6`
+
 
 ---
 
