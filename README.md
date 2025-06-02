@@ -7,7 +7,7 @@ Dragon launches with four prototype modules, but the goal is an open platform fo
 This bounty is to develop the prototype module for:
 
 **3. Sniper Analysis** 
-- This module displays an overview of all wallets that bought token supply `A) within 15s of the creation of its first liquidity pool` OR `B) within 5s of its graduation from Pump.fun to Raydium`. The specific data to be retrieved includes total active snipers, % of sniped supply still active, timestamps per snipe, and more. The definition of a snipe will evolve from here later, but if a developer wishes to discuss it now, we are open to that discussion.
+- This module displays an overview of all wallets that bought token supply `A) within 15s of the creation of its first liquidity pool` OR `B) within 5s of its graduation from Pump.fun to Raydium`. The specific data to be retrieved includes total active snipers, % of sniped supply still active, timestamps per snipe, and more. The definition of a snipe will evolve from here, but if a developer wants to modify the definition now we are excited to collaborate.
   
 ---
 
