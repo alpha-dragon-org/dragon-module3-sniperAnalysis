@@ -1,8 +1,10 @@
-# Intro to Dragon's Modules
+# Intro to Data Modules
 
-Dragon is a companion that visualizes the concentrations in power for any token on the Solana blockchain. The extension is separated into modules that provide different analyses on a token. Soon, developers will contribute their own modules to Dragon based on what they think is important for traders to know in the trenches.
+Dragon’s key design feature is its modular architecture. Each token analysis is packaged as a bite-sized data module that evaluates one specific dimension of a token project such as liquidity flow, smart money inflow, team wallet behavior, or developer history. 
 
-The initial release includes four modules and the module for this bounty is:
+Dragon launches with four prototype modules, but the goal is an open platform for community-development where anyone can propose and submit a module sourcing on- or off-chain data.
+
+This bounty is to develop the prototype module for:
 
 **3. Sniper Analysis** 
 - This module displays an overview of all wallets that bought token supply `A) within 15s of the creation of its first liquidity pool` OR `B) within 5s of its graduation from Pump.fun to Raydium`. The specific data to be retrieved includes total active snipers, % of sniped supply still active, timestamps per snipe, and more. The definition of a snipe will evolve from here later, but if a developer wishes to discuss it now, we are open to that discussion.
@@ -11,7 +13,7 @@ The initial release includes four modules and the module for this bounty is:
 
 ## Table of Contents
 
-- [Intro to Dragon's Modules](#intro-to-dragons-modules)
+- [Intro to Data Modules](#intro-to-data-modules)
 - [Table of Contents](#table-of-contents)
   - [Contribution Overview](#contribution-overview)
   - [Folder Structure](#folder-structure)
@@ -30,7 +32,7 @@ The initial release includes four modules and the module for this bounty is:
 
 This module currently gathers data by web-scraping TrenchyBot. The task is to build a pipeline that connects it to a Solana RPC (eg. [Helius](https://www.helius.dev)) and replace all scrapes if possible. If any data can not be retrieved from RPC, the developer can use whatever means necessary given the goals stated in the [Module Details](#module-details) below.
 
-If the data retrieved is as close to real-time as possible, Dragon becomes an unbeatable companion in the trenches.
+If the data retrieved is as close to real-time as possible, Dragon becomes an unbeatable DYOR companion in the trenches.
 
 ---
 
@@ -200,7 +202,7 @@ We will select a recipient for this bounty based on the following criteria, in o
    
 If there is more than one developer to satisfy the above criteria, the first pull request will receive the bounty. 
 
-**Please make sure to include your wallet address in your documentation and apply to [this job](https://www.based.jobs/) on based.jobs using that same wallet. This is where we will award the bounty to the winning developer.**
+**Please make sure to include your Solana wallet address when you submit your documentation. This is the address where we will send the token bounty if your submission is selected.**
 
 ---
 
@@ -248,14 +250,14 @@ If there is more than one developer to satisfy the above criteria, the first pul
 
 ## Future Bounties
 
-Dragon’s aim is to make token analyses more transparent and community-driven. At the community's direction, bounties will expand to include all kinds of fundamental token analyses.
+Dragon’s vision is for everyday traders to discover alpha as composable data sourced by open intelligence. If you have an idea for a token analysis to contribute, please consider proposing it to the community in the discussion [here](https://github.com/orgs/alpha-dragon-org/discussions/categories/module-ideas).
 
-If you have an idea for a module that could benefit traders in the trenches, please propose it in the discussion [here](https://github.com/orgs/alpha-dragon-org/discussions) to be considered for a bounty.
+If it receives significant support, we'll create a bounty to develop it!
 
 ---
 ## Issues
 
-Please report any bugs with this module through the issues tab here: [github.com/alpha-dragon-org/dragon-module3-sniperAnalysis](https://github.com/alpha-dragon-org/dragon-module3-sniperAnalysis)
+Please report any bugs with this module through the issues tab [here](https://github.com/alpha-dragon-org/dragon-module3-sniperAnalysis/issues).
 
 ---
 ## License
@@ -263,10 +265,10 @@ Please report any bugs with this module through the issues tab here: [github.com
 This project is open source and available under [the MIT License](https://opensource.org/license/mit).
 
 ---
-<img src="https://github.com/alpha-dragon-org/dragon-module1-tokeninfo/blob/main/frontend/logo-d.gif?raw=true" width="150">
+![Untitled5000x5000px1-ezgif com-optimize](https://github.com/user-attachments/assets/796967cf-d097-4bb0-962e-2648c9c4dbd1)
 
+
+[Website](https://alpha-dragon.ai/) |
+[Telegram](https://t.me/+OU0SLVfcpEZhZWQx) |
 [X](https://x.com/AlphaDragonAI) |
-[Discussion](https://github.com/orgs/alpha-dragon-org/discussions) |
-[Telegram](https://t.me/+OU0SLVfcpEZhZWQx)
-
-https://github.com/user-attachments/assets/7cd467df-3751-4be8-a710-2b8466ecf084
+[Discussion](https://github.com/orgs/alpha-dragon-org/discussions)
