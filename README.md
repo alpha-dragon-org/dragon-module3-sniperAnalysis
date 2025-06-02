@@ -182,7 +182,7 @@ dragon-data-modules/
   **Example Output:** `0.6`
 
    - **Timestamp of snipe**  
-  The exact number of seconds that the buy was made, relative to either one of the two [defined boundaries](#intro-to-dragon-data-modules). There may be multiple values to fetch, depending on the total # of inactive snipers.  
+  The exact number of seconds that the buy was made, relative to either one of the two [defined boundaries](#intro-to-data-modules). There may be multiple values to fetch, depending on the total # of inactive snipers.  
   **Example Output:** `2s`
 
 ### Module Output
