@@ -154,7 +154,7 @@ dragon-data-modules/
  **Example Output:** `18.3`
 
 - **Total # of active snipers**  
-  The total number of wallets that bought supply within either of the two [defined boundaries](#intro-to-dragon-data-modules), and are still holding any amount.  
+  The total number of wallets that bought supply within either of the two [defined boundaries](#intro-to-data-modules), and are still holding any amount.  
   **Example Output:** `2`
 
 - **Metadata for each active snipe**
@@ -168,11 +168,11 @@ dragon-data-modules/
   **Example Output:** `7.2`
 
   - **Timestamp of snipe**  
-  The exact number of seconds that the buy was made, relative to either one of the two [defined boundaries](#intro-to-dragon-data-modules). There may be multiple values to fetch, depending on the total # of active snipers.  
+  The exact number of seconds that the buy was made, relative to either one of the two [defined boundaries](#intro-to-data-modules). There may be multiple values to fetch, depending on the total # of active snipers.  
   **Example Output:** `4s`
 
 - **Total # of inactive snipers**  
-  The total number of wallets that bought supply within either of the two [defined boundaries](#intro-to-dragon-data-modules) and are no longer holding any amount, ie. sold to 0%  
+  The total number of wallets that bought supply within either of the two [defined boundaries](#intro-to-data-modules) and are no longer holding any amount, ie. sold to 0%  
   **Example Output:** `7`
 
 - **Metadata for each inactive snipe**
